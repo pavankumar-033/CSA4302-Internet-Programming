@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Library Management System</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>📚 Library Management System</h1>
+
+<nav>
+
+<a href="#home">Home</a>
+
+<a href="#login">Login</a>
+
+<a href="#register">Register</a>
+
+<a href="#search">Search Book</a>
+
+<a href="#history">History</a>
+
+<a href="#materials">Materials</a>
+
+<a href="#profile">Profile</a>
+
+<a href="#admin">Admin</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+</header>
+
+<!-- HOME -->
+
+<section id="home">
+
+<h2>Welcome to Library</h2>
+
+<p>
+
+Search books, borrow books, check fines and download study materials.
+
+</p>
+
+<img src="https://via.placeholder.com/600x250?text=Library+Management+System" alt="library">
+
+</section>
+
+<!-- LOGIN -->
+
+<section id="login">
+
+<h2>User Login</h2>
+
+<form>
+
+<label>Username</label>
+
+<input type="text" id="username">
+
+<label>Password</label>
+
+<input type="password" id="password">
+
+<button type="button" onclick="login()">Login</button>
+
+</form>
+
+</section>
+
+<!-- REGISTER -->
+
+<section id="register">
+
+<h2>Student Registration</h2>
+
+<form>
+
+<label>Name</label>
+
+<input type="text">
+
+<label>Email</label>
+
+<input type="email">
+
+<label>Phone</label>
+
+<input type="number">
+
+<label>Password</label>
+
+<input type="password">
+
+<button type="button">Register</button>
+
+</form>
+
+</section>
+
+<!-- SEARCH BOOK -->
+
+<section id="search">
+
+<h2>Search Book</h2>
+
+<input
+type="text"
+id="searchInput"
+placeholder="Enter Book Name">
+
+<button onclick="searchBook()">
+
+Search
+
+</button>
+
+<h3>Available Books</h3>
+
+<table>
+
+<tr>
+
+<th>ID</th>
+
+<th>Book</th>
+
+<th>Author</th>
+
+<th>Status</th>
+
+</tr>
+
+<tbody id="bookTable">
+
+</tbody>
+
+</table>
+
+</section>
+
+<!-- BORROW HISTORY -->
+
+<section id="history">
+
+<h2>My Borrow History</h2>
+
+<table>
+
+<tr>
+
+<th>Book</th>
+
+<th>Issue Date</th>
+
+<th>Expiry Date</th>
+
+</tr>
+
+<tr>
+
+<td>HTML</td>
+
+<td>10-07-2026</td>
+
+<td>20-07-2026</td>
+
+</tr>
+
+<tr>
+
+<td>Java</td>
+
+<td>12-07-2026</td>
+
+<td>22-07-2026</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<!-- FINE -->
+
+<section id="fine">
+
+<h2>Fine Details</h2>
+
+<p>
+
+Current Fine :
+
+<b id="fineAmount">
+
+₹0
+
+</b>
+
+</p>
+
+<button onclick="calculateFine()">
+
+Check Fine
+
+</button>
+
+</section>
+
+<!-- MATERIALS -->
+
+<section id="materials">
+
+<h2>Study Materials</h2>
+
+<table>
+
+<tr>
+
+<th>Year</th>
+
+<th>Semester</th>
+
+<th>Subject</th>
+
+<th>Download</th>
+
+</tr>
+
+<tr>
+
+<td>2nd</td>
+
+<td>4th</td>
+
+<td>Internet Programming</td>
+
+<td><button>Download</button></td>
+
+</tr>
+
+<tr>
+
+<td>3rd</td>
+
+<td>5th</td>
+
+<td>DBMS</td>
+
+<td><button>Download</button></td>
+
+</tr>
+
+<tr>
+
+<td>3rd</td>
+
+<td>6th</td>
+
+<td>Operating System</td>
+
+<td><button>Download</button></td>
+
+</tr>
+
+</table>
+
+</section>
+<!-- PROFILE -->
+
+<section id="profile">
+
+<h2>My Profile</h2>
+
+<p><b>Name :</b> Pavan Kumar</p>
+
+<p><b>Student ID :</b> 22001</p>
+
+<p><b>Department :</b> CSE</p>
+
+<p><b>Email :</b> pavan@gmail.com</p>
+
+</section>
+
+<!-- ADMIN -->
+
+<section id="admin">
+
+<h2>Admin Dashboard</h2>
+
+<h3>Add Book</h3>
+
+<input type="text" id="bookName" placeholder="Book Name">
+
+<input type="text" id="authorName" placeholder="Author">
+
+<button onclick="addBook()">
+
+Add Book
+
+</button>
+
+<h3>Issue Book</h3>
+
+<input type="text" placeholder="Student ID">
+
+<input type="text" placeholder="Book Name">
+
+<button>
+
+Issue
+
+</button>
+
+<h3>Return Book</h3>
+
+<input type="text" placeholder="Book Name">
+
+<button>
+
+Return
+
+</button>
+
+<h3>Update Material</h3>
+
+<input type="text" placeholder="Year">
+
+<input type="text" placeholder="Semester">
+
+<input type="text" placeholder="Subject">
+
+<button>
+
+Update
+
+</button>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2>Contact Us</h2>
+
+<form>
+
+<label>Name</label>
+
+<input type="text">
+
+<label>Email</label>
+
+<input type="email">
+
+<label>Message</label>
+
+<textarea rows="5"></textarea>
+
+<button>
+
+Send
+
+</button>
+
+</form>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Library Management System
+
+</p>
+
+</footer>
+
+<script src="javascript.js"></script>
+
+</body>
+</html>

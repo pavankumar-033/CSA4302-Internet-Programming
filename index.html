@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Flight Reservation System</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>✈️ Flight Reservation System</h1>
+
+<nav>
+
+<a href="#" onclick="showSection('home')">Home</a>
+
+<a href="#" onclick="showSection('login')">Login</a>
+
+<a href="#" onclick="showSection('register')">Register</a>
+
+<a href="#" onclick="showSection('search')">Search Flight</a>
+
+<a href="#" onclick="showSection('booking')">Book Ticket</a>
+
+<a href="#" onclick="showSection('payment')">Payment</a>
+
+<a href="#" onclick="showSection('ticket')">My Ticket</a>
+
+<a href="#" onclick="showSection('status')">Booking Status</a>
+
+<a href="#" onclick="showSection('cancel')">Cancel Ticket</a>
+
+<a href="#" onclick="showSection('feedback')">Feedback</a>
+
+<a href="#" onclick="showSection('admin')">Admin</a>
+
+</nav>
+
+</header>
+
+<!-- HOME -->
+
+<section id="home" class="page">
+
+<h2>Welcome to Flight Reservation System</h2>
+
+<p>
+
+Search flights, reserve tickets, make secure payments,
+check booking status and print e-tickets.
+
+</p>
+
+<img src="https://via.placeholder.com/900x300?text=Flight+Reservation+System">
+
+</section>
+
+<!-- LOGIN -->
+
+<section id="login" class="page" style="display:none;">
+
+<h2>User Login</h2>
+
+<label>Username</label>
+
+<input type="text" id="username">
+
+<label>Password</label>
+
+<input type="password" id="password">
+
+<button onclick="login()">Login</button>
+
+<br><br>
+
+<h3>Forgot Password</h3>
+
+<input type="email" placeholder="Enter Email">
+
+<button onclick="forgotPassword()">
+
+Submit
+
+</button>
+
+</section>
+
+<!-- REGISTER -->
+
+<section id="register" class="page" style="display:none;">
+
+<h2>User Registration</h2>
+
+<label>Name</label>
+
+<input type="text">
+
+<label>Email</label>
+
+<input type="email">
+
+<label>Phone</label>
+
+<input type="number">
+
+<label>Password</label>
+
+<input type="password">
+
+<button onclick="registerUser()">
+
+Register
+
+</button>
+
+</section>
+
+<!-- SEARCH FLIGHT -->
+
+<section id="search" class="page" style="display:none;">
+
+<h2>Search Flight</h2>
+
+<label>From</label>
+
+<input type="text" id="from">
+
+<label>To</label>
+
+<input type="text" id="to">
+
+<label>Date</label>
+
+<input type="date" id="date">
+
+<label>Class</label>
+
+<select>
+
+<option>Economy</option>
+
+<option>Business</option>
+
+<option>First Class</option>
+
+</select>
+
+<button onclick="searchFlight()">
+
+Search Flight
+
+</button>
+
+<br><br>
+
+<table>
+
+<tr>
+
+<th>Flight</th>
+
+<th>Airline</th>
+
+<th>Time</th>
+
+<th>Seats</th>
+
+<th>Fare</th>
+
+</tr>
+
+<tr>
+
+<td>AI101</td>
+
+<td>Air India</td>
+
+<td>09:00 AM</td>
+
+<td>30</td>
+
+<td>₹5500</td>
+
+</tr>
+
+<tr>
+
+<td>6E245</td>
+
+<td>IndiGo</td>
+
+<td>12:45 PM</td>
+
+<td>18</td>
+
+<td>₹4800</td>
+
+</tr>
+
+<tr>
+
+<td>SG330</td>
+
+<td>SpiceJet</td>
+
+<td>05:15 PM</td>
+
+<td>25</td>
+
+<td>₹5100</td>
+
+</tr>
+
+</table>
+
+</section>
+<!-- BOOK TICKET -->
+
+<section id="booking" class="page" style="display:none;">
+
+<h2>Book Flight Ticket</h2>
+
+<label>Passenger Name</label>
+
+<input type="text" id="passenger">
+
+<label>Flight Number</label>
+
+<input type="text" id="flight">
+
+<label>Seat Number</label>
+
+<input type="text">
+
+<label>Passport / ID</label>
+
+<input type="text">
+
+<button onclick="bookTicket()">
+
+Book Ticket
+
+</button>
+
+</section>
+
+<!-- PAYMENT -->
+
+<section id="payment" class="page" style="display:none;">
+
+<h2>Ticket Payment</h2>
+
+<label>Payment Method</label>
+
+<select>
+
+<option>UPI</option>
+
+<option>Credit Card</option>
+
+<option>Debit Card</option>
+
+<option>Net Banking</option>
+
+</select>
+
+<label>Amount</label>
+
+<input type="text" value="₹5500" readonly>
+
+<button onclick="makePayment()">
+
+Pay Now
+
+</button>
+
+</section>
+
+<!-- MY TICKET -->
+
+<section id="ticket" class="page" style="display:none;">
+
+<h2>My Ticket</h2>
+
+<table>
+
+<tr>
+
+<th>PNR</th>
+
+<th>Passenger</th>
+
+<th>Flight</th>
+
+<th>Status</th>
+
+</tr>
+
+<tr>
+
+<td>FL123456</td>
+
+<td>Pavan Kumar</td>
+
+<td>AI101</td>
+
+<td>Confirmed</td>
+
+</tr>
+
+</table>
+
+<br>
+
+<button onclick="printTicket()">
+
+Print Ticket
+
+</button>
+
+</section>
+
+<!-- BOOKING STATUS -->
+
+<section id="status" class="page" style="display:none;">
+
+<h2>View Booking Status</h2>
+
+<input type="text" id="pnr" placeholder="Enter PNR Number">
+
+<button onclick="checkStatus()">
+
+Check Status
+
+</button>
+
+<p id="statusResult"></p>
+
+</section>
+
+<!-- CANCEL -->
+
+<section id="cancel" class="page" style="display:none;">
+
+<h2>Cancel Ticket</h2>
+
+<input type="text" id="cancelPNR" placeholder="Enter PNR Number">
+
+<button onclick="cancelTicket()">
+
+Cancel Ticket
+
+</button>
+
+</section>
+<!-- ================= CUSTOMER FEEDBACK ================= -->
+
+<section id="feedback" class="page" style="display:none;">
+
+<h2>Customer Feedback</h2>
+
+<label>Your Name</label>
+
+<input type="text" id="feedbackName">
+
+<label>Your Feedback</label>
+
+<textarea id="feedbackText" rows="5"></textarea>
+
+<button onclick="submitFeedback()">
+
+Submit Feedback
+
+</button>
+
+</section>
+
+<!-- ================= ADMIN PANEL ================= -->
+
+<section id="admin" class="page" style="display:none;">
+
+<h2>Administrator Panel</h2>
+
+<h3>Administrator Login</h3>
+
+<input type="text" id="adminUser" placeholder="Username">
+
+<input type="password" id="adminPass" placeholder="Password">
+
+<button onclick="adminLogin()">
+
+Login
+
+</button>
+
+<hr>
+
+<h3>Manage Flight Schedule</h3>
+
+<input type="text" placeholder="Flight Number">
+
+<input type="text" placeholder="Airline">
+
+<input type="text" placeholder="Destination">
+
+<input type="number" placeholder="Available Seats">
+
+<input type="number" placeholder="Fare">
+
+<button onclick="updateFlight()">
+
+Update Flight
+
+</button>
+
+<hr>
+
+<h3>Admin Report</h3>
+
+<table>
+
+<tr>
+
+<th>Total Flights</th>
+
+<td>50</td>
+
+</tr>
+
+<tr>
+
+<th>Total Users</th>
+
+<td>320</td>
+
+</tr>
+
+<tr>
+
+<th>Total Bookings</th>
+
+<td>1280</td>
+
+</tr>
+
+<tr>
+
+<th>Cancelled Tickets</th>
+
+<td>84</td>
+
+</tr>
+
+</table>
+
+<button onclick="generateReport()">
+
+Generate Report
+
+</button>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+
+© 2026 Flight Reservation System
+
+</p>
+
+<p>
+
+Developed Using HTML, CSS & JavaScript
+
+</p>
+
+</footer>
+
+<script src="javascript.js"></script>
+
+</body>
+
+</html>

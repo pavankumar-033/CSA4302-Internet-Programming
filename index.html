@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Railway Reservation System</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🚆 Railway Reservation System</h1>
+
+<nav>
+
+<a href="#" onclick="showSection('home')">Home</a>
+
+<a href="#" onclick="showSection('login')">Login</a>
+
+<a href="#" onclick="showSection('register')">Register</a>
+
+<a href="#" onclick="showSection('search')">Search Train</a>
+
+<a href="#" onclick="showSection('booking')">Book Ticket</a>
+
+<a href="#" onclick="showSection('pnr')">PNR Status</a>
+
+<a href="#" onclick="showSection('cancel')">Cancel Ticket</a>
+
+<a href="#" onclick="showSection('dashboard')">Dashboard</a>
+
+<a href="#" onclick="showSection('admin')">Admin</a>
+
+</nav>
+
+</header>
+
+<!-- ================= HOME ================= -->
+
+<section id="home" class="page">
+
+<h2>Welcome to Railway Reservation System</h2>
+
+<p>
+
+Search trains, check seat availability,
+book tickets, cancel tickets,
+check PNR status and print tickets online.
+
+</p>
+
+<img src="https://via.placeholder.com/900x300?text=Railway+Reservation+System" alt="Railway">
+
+</section>
+
+<!-- ================= LOGIN ================= -->
+
+<section id="login" class="page" style="display:none;">
+
+<h2>User Login</h2>
+
+<form>
+
+<label>Username</label>
+
+<input
+type="text"
+id="username"
+placeholder="Enter Username">
+
+<label>Password</label>
+
+<input
+type="password"
+id="password"
+placeholder="Enter Password">
+
+<button
+type="button"
+onclick="login()">
+
+Login
+
+</button>
+
+</form>
+
+<br>
+
+<h3>Forgot Password</h3>
+
+<input
+type="email"
+placeholder="Enter Email">
+
+<button
+type="button"
+onclick="forgotPassword()">
+
+Submit
+
+</button>
+
+</section>
+
+<!-- ================= REGISTER ================= -->
+
+<section id="register" class="page" style="display:none;">
+
+<h2>User Registration</h2>
+
+<form>
+
+<label>Full Name</label>
+
+<input
+type="text"
+placeholder="Enter Name">
+
+<label>Email</label>
+
+<input
+type="email"
+placeholder="Enter Email">
+
+<label>Mobile Number</label>
+
+<input
+type="number"
+placeholder="Enter Mobile Number">
+
+<label>Password</label>
+
+<input
+type="password"
+placeholder="Create Password">
+
+<label>Confirm Password</label>
+
+<input
+type="password"
+placeholder="Confirm Password">
+
+<button
+type="button"
+onclick="registerUser()">
+
+Register
+
+</button>
+
+</form>
+
+</section>
+
+<!-- ================= SEARCH TRAIN ================= -->
+
+<section id="search" class="page" style="display:none;">
+
+<h2>Search Train</h2>
+
+<form>
+
+<label>From Station</label>
+
+<input
+type="text"
+id="fromStation"
+placeholder="Enter Source">
+
+<label>To Station</label>
+
+<input
+type="text"
+id="toStation"
+placeholder="Enter Destination">
+
+<label>Date of Journey</label>
+
+<input
+type="date"
+id="journeyDate">
+
+<button
+type="button"
+onclick="searchTrain()">
+
+Search Train
+
+</button>
+
+</form>
+
+<br>
+
+<h3>Available Trains</h3>
+
+<table>
+
+<tr>
+
+<th>Train No</th>
+
+<th>Train Name</th>
+
+<th>Route</th>
+
+<th>Departure</th>
+
+<th>Seats</th>
+
+<th>Class</th>
+
+</tr>
+
+<tbody id="trainTable">
+
+<tr>
+
+<td>12727</td>
+
+<td>Godavari Express</td>
+
+<td>Hyderabad → Visakhapatnam</td>
+
+<td>06:15 PM</td>
+
+<td>120</td>
+
+<td>Sleeper</td>
+
+</tr>
+
+<tr>
+
+<td>12603</td>
+
+<td>Chennai Express</td>
+
+<td>Hyderabad → Chennai</td>
+
+<td>08:30 PM</td>
+
+<td>90</td>
+
+<td>AC 3 Tier</td>
+
+</tr>
+
+<tr>
+
+<td>12785</td>
+
+<td>Kacheguda Express</td>
+
+<td>Hyderabad → Bangalore</td>
+
+<td>09:45 PM</td>
+
+<td>60</td>
+
+<td>AC Chair Car</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+<!-- ================= BOOK TICKET ================= -->
+
+<section id="booking" class="page" style="display:none;">
+
+<h2>Book Ticket</h2>
+
+<form>
+
+<label>Passenger Name</label>
+<input type="text" id="passengerName" placeholder="Enter Passenger Name">
+
+<label>Train Number</label>
+<input type="text" id="trainNo" placeholder="Enter Train Number">
+
+<label>From Station</label>
+<input type="text" id="from" placeholder="Source">
+
+<label>To Station</label>
+<input type="text" id="to" placeholder="Destination">
+
+<label>Journey Date</label>
+<input type="date" id="travelDate">
+
+<label>Class</label>
+
+<select id="trainClass">
+<option>Sleeper</option>
+<option>AC Chair Car</option>
+<option>AC 3 Tier</option>
+<option>AC 2 Tier</option>
+<option>First Class</option>
+</select>
+
+<label>Seat Preference</label>
+
+<select id="seat">
+<option>Window</option>
+<option>Middle</option>
+<option>Upper</option>
+<option>Lower</option>
+<option>Side Lower</option>
+<option>Side Upper</option>
+</select>
+
+<button type="button" onclick="bookTicket()">
+Book Ticket
+</button>
+
+</form>
+
+</section>
+
+<!-- ================= PAYMENT ================= -->
+
+<section id="payment" class="page" style="display:none;">
+
+<h2>Payment</h2>
+
+<form>
+
+<label>Payment Method</label>
+
+<select id="paymentMode">
+
+<option>UPI</option>
+<option>Credit Card</option>
+<option>Debit Card</option>
+<option>Net Banking</option>
+<option>Cash</option>
+
+</select>
+
+<label>Total Amount</label>
+
+<input type="text" value="₹750" readonly>
+
+<button type="button" onclick="makePayment()">
+Pay Now
+</button>
+
+</form>
+
+</section>
+
+<!-- ================= PNR STATUS ================= -->
+
+<section id="pnr" class="page" style="display:none;">
+
+<h2>Check PNR Status</h2>
+
+<input
+type="text"
+id="pnrNo"
+placeholder="Enter PNR Number">
+
+<button
+type="button"
+onclick="checkPNR()">
+
+Check Status
+
+</button>
+
+<br><br>
+
+<p id="pnrResult"></p>
+
+</section>
+
+<!-- ================= CANCEL TICKET ================= -->
+
+<section id="cancel" class="page" style="display:none;">
+
+<h2>Cancel Ticket</h2>
+
+<form>
+
+<label>PNR Number</label>
+
+<input
+type="text"
+id="cancelPNR"
+placeholder="Enter PNR Number">
+
+<button
+type="button"
+onclick="cancelTicket()">
+
+Cancel Ticket
+
+</button>
+
+</form>
+
+</section>
+
+<!-- ================= REFUND ================= -->
+
+<section id="refund" class="page" style="display:none;">
+
+<h2>Refund Details</h2>
+
+<table>
+
+<tr>
+<th>Ticket Fare</th>
+<td>₹750</td>
+</tr>
+
+<tr>
+<th>Refund Percentage</th>
+<td>80%</td>
+</tr>
+
+<tr>
+<th>Refund Amount</th>
+<td id="refundAmount">₹600</td>
+</tr>
+
+</table>
+
+</section>
+
+<!-- ================= USER DASHBOARD ================= -->
+
+<section id="dashboard" class="page" style="display:none;">
+
+<h2>User Dashboard</h2>
+
+<h3>Booking History</h3>
+
+<table>
+
+<tr>
+
+<th>PNR</th>
+<th>Passenger</th>
+<th>Train</th>
+<th>Date</th>
+<th>Status</th>
+
+</tr>
+
+<tr>
+
+<td>9876543210</td>
+<td>Pavan Kumar</td>
+<td>Godavari Express</td>
+<td>20-07-2026</td>
+<td>Confirmed</td>
+
+</tr>
+
+<tr>
+
+<td>9876543211</td>
+<td>Pavan Kumar</td>
+<td>Chennai Express</td>
+<td>25-07-2026</td>
+<td>RAC</td>
+
+</tr>
+
+</table>
+
+<br>
+
+<button type="button" onclick="window.print()">
+Print Ticket
+</button>
+
+</section>
+<!-- ================= ADMIN PANEL ================= -->
+
+<section id="admin" class="page" style="display:none;">
+
+<h2>Admin Panel</h2>
+
+<h3>Admin Login</h3>
+
+<input type="text" id="adminUser" placeholder="Admin Username">
+
+<input type="password" id="adminPass" placeholder="Password">
+
+<button type="button" onclick="adminLogin()">
+Login
+</button>
+
+<hr>
+
+<h3>Manage Train Details</h3>
+
+<input type="text" placeholder="Train Number">
+
+<input type="text" placeholder="Train Name">
+
+<input type="text" placeholder="Route">
+
+<input type="time" placeholder="Departure Time">
+
+<button type="button" onclick="updateTrain()">
+Update Train
+</button>
+
+<hr>
+
+<h3>Manage Seat Availability</h3>
+
+<input type="text" placeholder="Train Number">
+
+<input type="number" placeholder="Available Seats">
+
+<button type="button" onclick="updateSeats()">
+Update Seats
+</button>
+
+<hr>
+
+<h3>Manage Fare Details</h3>
+
+<input type="text" placeholder="Train Number">
+
+<input type="number" placeholder="Fare Amount">
+
+<button type="button" onclick="updateFare()">
+Update Fare
+</button>
+
+<hr>
+
+<h3>Manage Users</h3>
+
+<table>
+
+<tr>
+<th>User ID</th>
+<th>Name</th>
+<th>Email</th>
+</tr>
+
+<tr>
+<td>101</td>
+<td>Pavan Kumar</td>
+<td>pavan@gmail.com</td>
+</tr>
+
+<tr>
+<td>102</td>
+<td>Rahul Kumar</td>
+<td>rahul@gmail.com</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Payment Details</h3>
+
+<table>
+
+<tr>
+<th>PNR</th>
+<th>Passenger</th>
+<th>Amount</th>
+<th>Payment</th>
+</tr>
+
+<tr>
+<td>9876543210</td>
+<td>Pavan Kumar</td>
+<td>₹750</td>
+<td>Success</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h3>Refund Management</h3>
+
+<input type="text" placeholder="PNR Number">
+
+<input type="number" placeholder="Refund Amount">
+
+<button type="button" onclick="processRefund()">
+Process Refund
+</button>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="page" style="display:none;">
+
+<h2>About Railway Reservation System</h2>
+
+<p>
+
+The Railway Reservation System helps passengers search trains,
+check seat availability, reserve tickets, cancel tickets,
+check PNR status and print tickets.
+It also provides an Admin Panel for managing train schedules,
+fares, seat availability and passenger details.
+
+</p>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+
+© 2026 Railway Reservation System
+
+</p>
+
+<p>
+
+Developed Using HTML, CSS & JavaScript
+
+</p>
+
+</footer>
+
+<script src="javascript.js"></script>
+
+</body>
+
+</html>

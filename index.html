@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hotel Booking System</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🏨 Hotel Booking System</h1>
+
+<nav>
+
+<a href="#home">Home</a>
+
+<a href="#login">Login</a>
+
+<a href="#register">Register</a>
+
+<a href="#search">Search Hotels</a>
+
+<a href="#booking">Book Room</a>
+
+<a href="#history">Booking History</a>
+
+<a href="#profile">My Profile</a>
+
+<a href="#contact">Contact</a>
+
+<a href="#admin">Admin</a>
+
+<a href="#about">About</a>
+
+</nav>
+
+</header>
+
+<!-- HOME -->
+
+<section id="home">
+
+<h2>Welcome to Hotel Booking System</h2>
+
+<p>
+
+Book hotel rooms online quickly and easily. Search hotels, check room availability,
+book rooms, modify bookings, and cancel reservations.
+
+</p>
+
+<img src="https://via.placeholder.com/800x300?text=Hotel+Booking+System" alt="Hotel">
+
+</section>
+
+<!-- LOGIN -->
+
+<section id="login">
+
+<h2>User Login</h2>
+
+<form>
+
+<label>Username</label>
+
+<input type="text" id="username" placeholder="Enter Username">
+
+<label>Password</label>
+
+<input type="password" id="password" placeholder="Enter Password">
+
+<button type="button" onclick="login()">
+
+Login
+
+</button>
+
+</form>
+
+</section>
+
+<!-- REGISTER -->
+
+<section id="register">
+
+<h2>User Registration</h2>
+
+<form>
+
+<label>Full Name</label>
+
+<input type="text" placeholder="Enter Name">
+
+<label>Email</label>
+
+<input type="email" placeholder="Enter Email">
+
+<label>Phone Number</label>
+
+<input type="number" placeholder="Enter Phone Number">
+
+<label>Password</label>
+
+<input type="password" placeholder="Create Password">
+
+<button type="button">
+
+Register
+
+</button>
+
+</form>
+
+</section>
+
+<!-- SEARCH HOTEL -->
+
+<section id="search">
+
+<h2>Search Hotels</h2>
+
+<input
+type="text"
+id="searchInput"
+placeholder="Enter Hotel Name">
+
+<button onclick="searchHotel()">
+
+Search
+
+</button>
+
+<h3>Available Hotels</h3>
+
+<table>
+
+<tr>
+
+<th>ID</th>
+
+<th>Hotel Name</th>
+
+<th>Location</th>
+
+<th>Room Type</th>
+
+<th>Price</th>
+
+<th>Status</th>
+
+</tr>
+
+<tbody id="hotelTable">
+
+</tbody>
+
+</table>
+
+</section>
+
+<!-- ROOM AVAILABILITY -->
+
+<section id="availability">
+
+<h2>Check Room Availability</h2>
+
+<table>
+
+<tr>
+
+<th>Hotel</th>
+
+<th>Room Type</th>
+
+<th>Available Rooms</th>
+
+</tr>
+
+<tr>
+
+<td>Royal Inn</td>
+
+<td>Single</td>
+
+<td>12</td>
+
+</tr>
+
+<tr>
+
+<td>Sea View</td>
+
+<td>Double</td>
+
+<td>8</td>
+
+</tr>
+
+<tr>
+
+<td>Grand Palace</td>
+
+<td>Suite</td>
+
+<td>5</td>
+
+</tr>
+
+</table>
+
+</section>
+<!-- BOOK ROOM -->
+
+<section id="booking">
+
+<h2>Book a Room</h2>
+
+<form>
+
+<label>Customer Name</label>
+<input type="text" id="customerName" placeholder="Enter Your Name">
+
+<label>Hotel Name</label>
+<input type="text" id="hotelName" placeholder="Enter Hotel Name">
+
+<label>Room Type</label>
+
+<select id="roomType">
+
+<option>Single</option>
+<option>Double</option>
+<option>Deluxe</option>
+<option>Suite</option>
+
+</select>
+
+<label>Check-in Date</label>
+<input type="date" id="checkin">
+
+<label>Check-out Date</label>
+<input type="date" id="checkout">
+
+<label>Number of Rooms</label>
+<input type="number" id="rooms" min="1">
+
+<button type="button" onclick="bookRoom()">
+
+Book Now
+
+</button>
+
+</form>
+
+</section>
+
+<!-- MODIFY BOOKING -->
+
+<section id="modify">
+
+<h2>Modify Booking</h2>
+
+<form>
+
+<label>Booking ID</label>
+
+<input type="number" id="modifyId" placeholder="Booking ID">
+
+<label>New Check-in Date</label>
+
+<input type="date">
+
+<label>New Check-out Date</label>
+
+<input type="date">
+
+<button type="button" onclick="modifyBooking()">
+
+Modify Booking
+
+</button>
+
+</form>
+
+</section>
+
+<!-- CANCEL BOOKING -->
+
+<section id="cancel">
+
+<h2>Cancel Booking</h2>
+
+<form>
+
+<label>Booking ID</label>
+
+<input type="number" id="cancelId" placeholder="Booking ID">
+
+<button type="button" onclick="cancelBooking()">
+
+Cancel Booking
+
+</button>
+
+</form>
+
+</section>
+
+<!-- BOOKING HISTORY -->
+
+<section id="history">
+
+<h2>My Booking History</h2>
+
+<table>
+
+<tr>
+
+<th>Booking ID</th>
+
+<th>Hotel</th>
+
+<th>Room</th>
+
+<th>Check-in</th>
+
+<th>Check-out</th>
+
+<th>Status</th>
+
+</tr>
+
+<tr>
+
+<td>101</td>
+
+<td>Royal Inn</td>
+
+<td>Single</td>
+
+<td>20-07-2026</td>
+
+<td>22-07-2026</td>
+
+<td>Confirmed</td>
+
+</tr>
+
+<tr>
+
+<td>102</td>
+
+<td>Sea View</td>
+
+<td>Double</td>
+
+<td>25-07-2026</td>
+
+<td>27-07-2026</td>
+
+<td>Completed</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<!-- MY PROFILE -->
+
+<section id="profile">
+
+<h2>My Profile</h2>
+
+<p><b>Name :</b> Pavan Kumar</p>
+
+<p><b>User ID :</b> 22001</p>
+
+<p><b>Email :</b> pavan@gmail.com</p>
+
+<p><b>Phone :</b> 9876543210</p>
+
+<p><b>City :</b> Hyderabad</p>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2>Contact Us</h2>
+
+<form>
+
+<label>Name</label>
+
+<input type="text" placeholder="Enter Your Name">
+
+<label>Email</label>
+
+<input type="email" placeholder="Enter Your Email">
+
+<label>Subject</label>
+
+<input type="text" placeholder="Subject">
+
+<label>Message</label>
+
+<textarea rows="6" placeholder="Write Your Message"></textarea>
+
+<button type="button">
+
+Send Message
+
+</button>
+
+</form>
+
+</section>
+<!-- ADMIN DASHBOARD -->
+
+<section id="admin">
+
+<h2>Admin Dashboard</h2>
+
+<h3>Admin Login</h3>
+
+<input type="text" id="adminUser" placeholder="Username">
+
+<input type="password" id="adminPass" placeholder="Password">
+
+<button type="button" onclick="adminLogin()">
+Login
+</button>
+
+<hr>
+
+<h3>Change Room Quantity</h3>
+
+<input type="text" id="roomHotel" placeholder="Hotel Name">
+
+<input type="number" id="roomQty" placeholder="Available Rooms">
+
+<button type="button" onclick="updateQuantity()">
+Update Quantity
+</button>
+
+<hr>
+
+<h3>Change Room Price</h3>
+
+<input type="text" id="priceHotel" placeholder="Hotel Name">
+
+<input type="number" id="roomPrice" placeholder="Price">
+
+<button type="button" onclick="updatePrice()">
+Update Price
+</button>
+
+<hr>
+
+<h3>Modify Customer Booking</h3>
+
+<input type="number" placeholder="Booking ID">
+
+<button type="button" onclick="modifyBooking()">
+Modify Booking
+</button>
+
+<hr>
+
+<h3>Cancel Customer Booking</h3>
+
+<input type="number" placeholder="Booking ID">
+
+<button type="button" onclick="cancelBooking()">
+Cancel Booking
+</button>
+
+</section>
+
+<!-- STATIC PAGES -->
+
+<section id="about">
+
+<h2>About Us</h2>
+
+<p>
+
+The Hotel Booking System helps customers search hotels,
+check room availability and reserve rooms online.
+It also provides an easy-to-use dashboard for hotel
+administrators to manage bookings, prices and room availability.
+
+</p>
+
+</section>
+
+<section id="service">
+
+<h2>Customer Service (Q & A)</h2>
+
+<h4>Q1. How can I book a room?</h4>
+
+<p>
+Search your hotel, choose room type and click Book Now.
+</p>
+
+<h4>Q2. Can I cancel my booking?</h4>
+
+<p>
+Yes. Enter your Booking ID and click Cancel Booking.
+</p>
+
+<h4>Q3. Can I modify my booking?</h4>
+
+<p>
+Yes. Update your booking details before check-in.
+</p>
+
+<h4>Q4. Is online payment available?</h4>
+
+<p>
+Yes. This demo project assumes online payment support.
+</p>
+
+</section>
+
+<section id="privacy">
+
+<h2>Privacy Policy</h2>
+
+<p>
+
+Your personal information is kept secure and is used
+only for booking purposes. We do not share your
+information with third parties without your permission.
+
+</p>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+
+© 2026 Hotel Booking System
+
+</p>
+
+<p>
+
+Developed using HTML, CSS and JavaScript
+
+</p>
+
+</footer>
+
+<script src="javascript.js"></script>
+
+</body>
+
+</html>

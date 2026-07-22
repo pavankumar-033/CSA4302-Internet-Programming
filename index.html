@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Buy A Cake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🎂 Buy A Cake</h1>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#cakes">Cakes</a>
+        <a href="#orders">Order</a>
+        <a href="#admin">Admin</a>
+    </nav>
+
+</header>
+
+
+<section id="home">
+
+<h2>Fresh Cakes For Every Occasion 🎉</h2>
+
+<p>
+Order delicious cakes from nearby cake shops.
+</p>
+
+</section>
+
+
+
+<section id="cakes">
+
+<h2>Available Cakes 🍰</h2>
+
+
+<input type="text" 
+id="search"
+placeholder="Search Cake..."
+onkeyup="searchCake()">
+
+
+
+<div class="container">
+
+
+<div class="cake">
+
+<div class="cake-image">
+🍫🎂
+</div>
+
+<h3>Chocolate Cake</h3>
+
+<p>Category : Birthday</p>
+
+<p>Price : ₹500</p>
+
+
+<select>
+<option>Small</option>
+<option>Medium</option>
+<option>Large</option>
+</select>
+
+
+<input placeholder="Cake Message">
+
+
+<button onclick="addCart('Chocolate Cake',500)">
+Add Cart
+</button>
+
+
+</div>
+
+
+
+
+<div class="cake">
+
+<div class="cake-image">
+🍰
+</div>
+
+<h3>Vanilla Cake</h3>
+
+<p>Category : Anniversary</p>
+
+<p>Price : ₹400</p>
+
+
+<select>
+<option>Small</option>
+<option>Medium</option>
+<option>Large</option>
+</select>
+
+
+<input placeholder="Cake Message">
+
+
+<button onclick="addCart('Vanilla Cake',400)">
+Add Cart
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="cake">
+
+<div class="cake-image">
+🍓🎂
+</div>
+
+
+<h3>Strawberry Cake</h3>
+
+<p>Category : Party</p>
+
+<p>Price : ₹600</p>
+
+
+<select>
+<option>Small</option>
+<option>Medium</option>
+<option>Large</option>
+</select>
+
+
+<input placeholder="Cake Message">
+
+
+<button onclick="addCart('Strawberry Cake',600)">
+Add Cart
+</button>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+<section id="orders">
+
+<h2>Your Cart 🛒</h2>
+
+
+<div id="cart">
+
+No items added
+
+</div>
+
+
+
+<h3>Delivery Details</h3>
+
+
+<input id="name"
+placeholder="Customer Name">
+
+
+<input id="address"
+placeholder="Delivery Address">
+
+
+<input id="phone"
+placeholder="Phone Number">
+
+
+
+<button onclick="placeOrder()">
+Confirm Order & Payment 💳
+</button>
+
+
+<p id="result"></p>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="admin">
+
+
+<h2>Admin Panel 👨‍💼</h2>
+
+
+<button onclick="showOrders()">
+
+View Orders
+
+</button>
+
+
+<p id="adminData"></p>
+
+
+</section>
+
+
+
+
+
+<footer>
+
+<p>
+© 2026 Buy A Cake | All Rights Reserved
+</p>
+
+</footer>
+
+
+
+
+<script src="javascript.js"></script>
+
+
+</body>
+
+</html>

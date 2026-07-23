@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>StyleHub Fashion Store</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>👗 StyleHub Fashion Store</h1>
+
+<nav>
+
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#cart">Cart</a>
+<a href="#admin">Admin</a>
+
+</nav>
+
+</header>
+
+
+
+<section id="home">
+
+<h2>Fashion For Everyone ✨</h2>
+
+<p>
+Discover the latest fashion trends for Men, Women and Kids.
+</p>
+
+<h3>🔥 Flat 40% OFF on New Arrivals</h3>
+
+</section>
+
+
+
+
+<section id="products">
+
+<h2>Fashion Collection 🛍️</h2>
+
+<input
+type="text"
+id="search"
+placeholder="Search Product..."
+onkeyup="searchProduct()">
+
+<div class="container">
+
+
+<div class="product">
+
+<div class="emoji">👕</div>
+
+<h3>T-Shirt</h3>
+
+<p>Category : Men</p>
+
+<p>Price : ₹999</p>
+
+<button onclick="addCart('T-Shirt',999)">
+Add to Cart
+</button>
+
+</div>
+
+
+
+<div class="product">
+
+<div class="emoji">👗</div>
+
+<h3>Dress</h3>
+
+<p>Category : Women</p>
+
+<p>Price : ₹1499</p>
+
+<button onclick="addCart('Dress',1499)">
+Add to Cart
+</button>
+
+</div>
+
+
+
+<div class="product">
+
+<div class="emoji">👟</div>
+
+<h3>Shoes</h3>
+
+<p>Category : Footwear</p>
+
+<p>Price : ₹2499</p>
+
+<button onclick="addCart('Shoes',2499)">
+Add to Cart
+</button>
+
+</div>
+
+
+
+<div class="product">
+
+<div class="emoji">👜</div>
+
+<h3>Hand Bag</h3>
+
+<p>Category : Accessories</p>
+
+<p>Price : ₹1999</p>
+
+<button onclick="addCart('Hand Bag',1999)">
+Add to Cart
+</button>
+
+</div>
+
+
+
+<div class="product">
+
+<div class="emoji">🧥</div>
+
+<h3>Jacket</h3>
+
+<p>Category : Winter Wear</p>
+
+<p>Price : ₹2999</p>
+
+<button onclick="addCart('Jacket',2999)">
+Add to Cart
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+<section id="cart">
+
+<h2>Your Cart 🛒</h2>
+
+<div id="cartData">
+
+Cart is Empty
+
+</div>
+
+<button onclick="placeOrder()">
+Buy Now 💳
+</button>
+
+<p id="order"></p>
+
+</section>
+
+
+
+
+<section id="admin">
+
+<h2>Admin Panel 👨‍💼</h2>
+
+<button onclick="trackOrders()">
+View Orders
+</button>
+
+<p id="adminData"></p>
+
+</section>
+
+
+
+<footer>
+
+<p>
+© 2026 StyleHub Fashion Store
+</p>
+
+</footer>
+
+<script src="javascript.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>TechSavvy Electronics</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>💻 TechSavvy Electronics</h1>
+
+<nav>
+
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#cart">Cart</a>
+<a href="#admin">Admin</a>
+
+</nav>
+
+</header>
+
+
+
+
+<section id="home">
+
+<h2>Latest Gadgets At Best Price 🚀</h2>
+
+<p>
+Shop Smartphones, Laptops, Tablets and Accessories.
+</p>
+
+<h3>🔥 Online Discount Up To 30%</h3>
+
+</section>
+
+
+
+
+
+
+<section id="products">
+
+
+<h2>Product Catalogue 🛒</h2>
+
+
+<input id="search"
+placeholder="Search Product..."
+onkeyup="searchProduct()">
+
+
+
+<div class="container">
+
+
+
+<div class="product">
+
+<div class="emoji">
+📱
+</div>
+
+
+<h3>Smartphone</h3>
+
+<p>Category : Mobile</p>
+
+<p>Price : ₹20000</p>
+
+
+<button onclick="addCart('Smartphone',20000)">
+Add Cart
+</button>
+
+
+</div>
+
+
+
+
+
+
+<div class="product">
+
+<div class="emoji">
+💻
+</div>
+
+
+<h3>Laptop</h3>
+
+<p>Category : Computer</p>
+
+<p>Price : ₹55000</p>
+
+
+<button onclick="addCart('Laptop',55000)">
+Add Cart
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="product">
+
+<div class="emoji">
+📱
+</div>
+
+
+<h3>Tablet</h3>
+
+<p>Category : Tablet</p>
+
+<p>Price : ₹15000</p>
+
+
+<button onclick="addCart('Tablet',15000)">
+Add Cart
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="product">
+
+<div class="emoji">
+🎧
+</div>
+
+
+<h3>Headphone</h3>
+
+<p>Category : Accessories</p>
+
+<p>Price : ₹2000</p>
+
+
+<button onclick="addCart('Headphone',2000)">
+Add Cart
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section id="cart">
+
+
+<h2>Your Cart 🛒</h2>
+
+
+<div id="cartData">
+
+Cart Empty
+
+</div>
+
+
+
+<button onclick="placeOrder()">
+
+Buy Now 💳
+
+</button>
+
+
+<p id="order"></p>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section id="admin">
+
+
+<h2>Admin Panel 👨‍💼</h2>
+
+
+<button onclick="trackOrders()">
+
+Track Orders
+
+</button>
+
+
+<p id="adminData"></p>
+
+
+</section>
+
+
+
+
+
+
+
+<footer>
+
+<p>
+© 2026 TechSavvy Electronics
+</p>
+
+</footer>
+
+
+
+
+<script src="javascript.js"></script>
+
+
+</body>
+
+</html>

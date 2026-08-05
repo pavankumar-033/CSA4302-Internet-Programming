@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InsureEasy - Insurance Management System</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+🛡️ InsureEasy
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#policies">Policies</a></li>
+
+<li><a href="#compare">Compare</a></li>
+
+<li><a href="#dashboard">Dashboard</a></li>
+
+<li><a href="#calculator">Calculator</a></li>
+
+<li><a href="#claims">Claims</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<!-- Hero -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>Protect Your Future with InsureEasy</h1>
+
+<p>
+Compare, Purchase and Manage Insurance Policies Online
+</p>
+
+<a href="#policies" class="btn">
+Explore Policies
+</a>
+
+</div>
+
+</section>
+
+<!-- Login -->
+
+<section class="login">
+
+<h2>User Login</h2>
+
+<form>
+
+<input
+type="email"
+placeholder="Email">
+
+<input
+type="password"
+placeholder="Password">
+
+<button type="button">
+Login
+</button>
+
+<p>
+New User?
+<a href="#">
+Register Here
+</a>
+</p>
+
+</form>
+
+</section>
+
+<!-- Insurance Policies -->
+
+<section
+class="policies"
+id="policies">
+
+<h2>Insurance Policies</h2>
+
+<div class="policy-container">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600">
+
+<h3>Health Insurance</h3>
+
+<p>Coverage up to ₹10 Lakhs</p>
+
+<p class="price">
+Premium: ₹8,000/year
+</p>
+
+<button onclick="viewPolicy('Health Insurance')">
+View Details
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600">
+
+<h3>Auto Insurance</h3>
+
+<p>Vehicle Damage Protection</p>
+
+<p class="price">
+Premium: ₹5,500/year
+</p>
+
+<button onclick="viewPolicy('Auto Insurance')">
+View Details
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600">
+
+<h3>Home Insurance</h3>
+
+<p>House & Property Protection</p>
+
+<p class="price">
+Premium: ₹6,500/year
+</p>
+
+<button onclick="viewPolicy('Home Insurance')">
+View Details
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Compare -->
+
+<section
+class="compare"
+id="compare">
+
+<h2>Compare Policies</h2>
+
+<table>
+
+<tr>
+
+<th>Feature</th>
+
+<th>Health</th>
+
+<th>Auto</th>
+
+<th>Home</th>
+
+</tr>
+
+<tr>
+
+<td>Premium</td>
+
+<td>₹8,000</td>
+
+<td>₹5,500</td>
+
+<td>₹6,500</td>
+
+</tr>
+
+<tr>
+
+<td>Coverage</td>
+
+<td>₹10 Lakhs</td>
+
+<td>Vehicle</td>
+
+<td>House</td>
+
+</tr>
+
+<tr>
+
+<td>Claim Process</td>
+
+<td>Online</td>
+
+<td>Online</td>
+
+<td>Online</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<!-- Dashboard -->
+
+<section
+class="dashboard"
+id="dashboard">
+
+<h2>Customer Dashboard</h2>
+
+<div class="dashboard-box">
+
+<div class="box">
+
+<h3>My Policies</h3>
+
+<p>3 Active Policies</p>
+
+</div>
+
+<div class="box">
+
+<h3>Premium Due</h3>
+
+<p>15 August 2026</p>
+
+</div>
+
+<div class="box">
+
+<h3>Claims</h3>
+
+<p>1 Pending Claim</p>
+
+</div>
+
+<div class="box">
+
+<h3>SMS Alerts</h3>
+
+<p>Enabled</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Premium Calculator -->
+
+<section
+class="calculator"
+id="calculator">
+
+<h2>Premium Calculator</h2>
+
+<input
+type="number"
+id="amount"
+placeholder="Coverage Amount">
+
+<input
+type="number"
+id="years"
+placeholder="Policy Years">
+
+<button onclick="calculatePremium()">
+Calculate Premium
+</button>
+
+<h3 id="premiumResult"></h3>
+
+</section>
+
+<!-- Claims -->
+
+<section
+class="claims"
+id="claims">
+
+<h2>Insurance Claim</h2>
+
+<form>
+
+<input
+type="text"
+placeholder="Policy Number">
+
+<input
+type="text"
+placeholder="Claim Reason">
+
+<textarea
+placeholder="Describe your claim"></textarea>
+
+<button>
+Submit Claim
+</button>
+
+</form>
+
+</section>
+
+<!-- Contact -->
+
+<section
+class="contact"
+id="contact">
+
+<h2>Contact Us</h2>
+
+<form>
+
+<input
+type="text"
+placeholder="Full Name">
+
+<input
+type="email"
+placeholder="Email">
+
+<textarea
+placeholder="Message"></textarea>
+
+<button>
+Send Message
+</button>
+
+</form>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 InsureEasy Insurance Management System
+
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

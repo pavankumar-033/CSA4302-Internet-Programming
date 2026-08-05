@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Finder</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Header -->
+
+<header>
+
+    <div class="logo">
+        🏠 Home Finder
+    </div>
+
+    <nav>
+
+        <ul>
+
+            <li><a href="#home">Home</a></li>
+
+            <li><a href="#properties">Properties</a></li>
+
+            <li><a href="#services">Services</a></li>
+
+            <li><a href="#calculator">Calculator</a></li>
+
+            <li><a href="#contact">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<!-- Hero -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>Find Your Dream Home</h1>
+
+        <p>
+            Buy, Rent and Sell Properties Easily
+        </p>
+
+        <a href="#properties" class="btn">
+            Explore Properties
+        </a>
+
+    </div>
+
+</section>
+
+<!-- Search -->
+
+<section class="search">
+
+<h2>Search Property</h2>
+
+<div class="search-box">
+
+<input
+type="text"
+id="location"
+placeholder="Enter Location">
+
+<select id="type">
+
+<option value="">Property Type</option>
+
+<option>House</option>
+
+<option>Apartment</option>
+
+<option>Villa</option>
+
+<option>Land</option>
+
+</select>
+
+<select id="budget">
+
+<option value="">Budget</option>
+
+<option value="20">Below 20 Lakhs</option>
+
+<option value="40">Below 40 Lakhs</option>
+
+<option value="60">Below 60 Lakhs</option>
+
+<option value="100">Below 1 Crore</option>
+
+</select>
+
+<button onclick="searchProperty()">
+Search
+</button>
+
+</div>
+
+</section>
+
+<!-- Properties -->
+
+<section
+class="properties"
+id="properties">
+
+<h2>Featured Properties</h2>
+
+<div class="property-container">
+
+<div
+class="card"
+data-location="Chennai"
+data-type="Villa"
+data-price="85">
+
+<img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600">
+
+<h3>Luxury Villa</h3>
+
+<p>📍 Chennai</p>
+
+<p>₹85 Lakhs</p>
+
+<button onclick="details('Luxury Villa')">
+View Details
+</button>
+
+</div>
+
+<div
+class="card"
+data-location="Bangalore"
+data-type="Apartment"
+data-price="60">
+
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600">
+
+<h3>Modern Apartment</h3>
+
+<p>📍 Bangalore</p>
+
+<p>₹60 Lakhs</p>
+
+<button onclick="details('Modern Apartment')">
+View Details
+</button>
+
+</div>
+
+<div
+class="card"
+data-location="Hyderabad"
+data-type="House"
+data-price="45">
+
+<img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600">
+
+<h3>Family House</h3>
+
+<p>📍 Hyderabad</p>
+
+<p>₹45 Lakhs</p>
+
+<button onclick="details('Family House')">
+View Details
+</button>
+
+</div>
+
+<div
+class="card"
+data-location="Goa"
+data-type="Villa"
+data-price="95">
+
+<img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600">
+
+<h3>Beach Villa</h3>
+
+<p>📍 Goa</p>
+
+<p>₹95 Lakhs</p>
+
+<button onclick="details('Beach Villa')">
+View Details
+</button>
+
+</div>
+
+<div
+class="card"
+data-location="Coimbatore"
+data-type="Land"
+data-price="18">
+
+<img src="https://images.unsplash.com/photo-1448630360428-65456885c650?w=600">
+
+<h3>Residential Land</h3>
+
+<p>📍 Coimbatore</p>
+
+<p>₹18 Lakhs</p>
+
+<button onclick="details('Residential Land')">
+View Details
+</button>
+
+</div>
+
+<div
+class="card"
+data-location="Ooty"
+data-type="House"
+data-price="38">
+
+<img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600">
+
+<h3>Hill House</h3>
+
+<p>📍 Ooty</p>
+
+<p>₹38 Lakhs</p>
+
+<button onclick="details('Hill House')">
+View Details
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Services -->
+
+<section
+class="services"
+id="services">
+
+<h2>Our Services</h2>
+
+<div class="service-box">
+
+<div class="service">
+
+<h3>🏠 Buy Property</h3>
+
+<p>
+Verified homes and apartments.
+</p>
+
+</div>
+
+<div class="service">
+
+<h3>💰 Sell Property</h3>
+
+<p>
+Reach thousands of buyers.
+</p>
+
+</div>
+
+<div class="service">
+
+<h3>📍 Rent Property</h3>
+
+<p>
+Affordable rental houses.
+</p>
+
+</div>
+
+<div class="service">
+
+<h3>👨‍💼 Agents</h3>
+
+<p>
+Professional real estate support.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Calculator -->
+
+<section
+id="calculator"
+class="calculator">
+
+<h2>Mortgage Calculator</h2>
+
+<input
+type="number"
+id="price"
+placeholder="Property Price">
+
+<input
+type="number"
+id="interest"
+placeholder="Interest Rate (%)">
+
+<input
+type="number"
+id="years"
+placeholder="Loan Years">
+
+<button onclick="calculateEMI()">
+
+Calculate EMI
+
+</button>
+
+<h3 id="emiResult"></h3>
+
+</section>
+
+<!-- Contact -->
+
+<section
+id="contact"
+class="contact">
+
+<h2>Contact Us</h2>
+
+<form>
+
+<input
+type="text"
+placeholder="Your Name">
+
+<input
+type="email"
+placeholder="Email">
+
+<textarea
+placeholder="Message"></textarea>
+
+<button>
+
+Send
+
+</button>
+
+</form>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Home Finder
+
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlossomGifts - Online Flower & Gift Shop</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- Header -->
+
+<header>
+
+<div class="logo">
+🌸 BlossomGifts
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#flowers">Flowers</a></li>
+
+<li><a href="#gifts">Gifts</a></li>
+
+<li><a href="#order">Order</a></li>
+
+<li><a href="#tracking">Tracking</a></li>
+
+<li><a href="#offers">Offers</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<!-- Hero -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>Send Love with Flowers & Gifts</h1>
+
+<p>
+Fresh Flowers | Personalized Gifts | Fast Delivery
+</p>
+
+<a href="#flowers" class="btn">
+Shop Now
+</a>
+
+</div>
+
+</section>
+
+<!-- Login -->
+
+<section class="login">
+
+<h2>User Login</h2>
+
+<form>
+
+<input
+type="email"
+placeholder="Enter Email">
+
+<input
+type="password"
+placeholder="Enter Password">
+
+<button type="button">
+Login
+</button>
+
+<p>
+
+New Customer?
+
+<a href="#">Register Here</a>
+
+</p>
+
+</form>
+
+</section>
+
+<!-- Flower Section -->
+
+<section
+class="products"
+id="flowers">
+
+<h2>Fresh Flowers</h2>
+
+<div class="product-container">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1520763185298-1b434c919102?w=600">
+
+<h3>Rose Bouquet</h3>
+
+<p>Fresh Red Roses</p>
+
+<p class="price">
+₹799
+</p>
+
+<button onclick="viewProduct('Rose Bouquet')">
+View
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1468327768560-75b778cbb551?w=600">
+
+<h3>Lily Bouquet</h3>
+
+<p>White Lily Collection</p>
+
+<p class="price">
+₹999
+</p>
+
+<button onclick="viewProduct('Lily Bouquet')">
+View
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600">
+
+<h3>Mixed Flowers</h3>
+
+<p>Colorful Arrangement</p>
+
+<p class="price">
+₹699
+</p>
+
+<button onclick="viewProduct('Mixed Flowers')">
+View
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Gift Section -->
+
+<section
+class="products"
+id="gifts">
+
+<h2>Special Gifts</h2>
+
+<div class="product-container">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0ff?w=600">
+
+<h3>Teddy Bear</h3>
+
+<p>Soft Gift Toy</p>
+
+<p class="price">
+₹499
+</p>
+
+<button onclick="viewProduct('Teddy Bear')">
+View
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1512909006721-3d6018887383?w=600">
+
+<h3>Chocolate Box</h3>
+
+<p>Premium Chocolates</p>
+
+<p class="price">
+₹899
+</p>
+
+<button onclick="viewProduct('Chocolate Box')">
+View
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=600">
+
+<h3>Gift Basket</h3>
+
+<p>Customized Basket</p>
+
+<p class="price">
+₹1499
+</p>
+
+<button onclick="viewProduct('Gift Basket')">
+View
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Order -->
+
+<section
+class="order"
+id="order">
+
+<h2>Place Your Order</h2>
+
+<form>
+
+<input
+type="text"
+placeholder="Customer Name">
+
+<input
+type="email"
+placeholder="Email">
+
+<input
+type="text"
+placeholder="Delivery Address">
+
+<input
+type="date">
+
+<input
+type="time">
+
+<select>
+
+<option>Select Product</option>
+
+<option>Rose Bouquet</option>
+
+<option>Lily Bouquet</option>
+
+<option>Mixed Flowers</option>
+
+<option>Teddy Bear</option>
+
+<option>Chocolate Box</option>
+
+<option>Gift Basket</option>
+
+</select>
+
+<button>
+Place Order
+</button>
+
+</form>
+
+</section>
+
+<!-- Tracking -->
+
+<section
+class="tracking"
+id="tracking">
+
+<h2>Track Your Order</h2>
+
+<input
+type="text"
+id="trackID"
+placeholder="Enter Order ID">
+
+<button onclick="trackOrder()">
+Track
+</button>
+
+<h3 id="trackResult"></h3>
+
+</section>
+
+<!-- Offers -->
+
+<section
+class="offers"
+id="offers">
+
+<h2>Special Offers</h2>
+
+<div class="offer-box">
+
+<div>
+
+<h3>🎁 20% OFF</h3>
+
+<p>Birthday Flowers</p>
+
+</div>
+
+<div>
+
+<h3>🌹 Buy 2 Get 1</h3>
+
+<p>Rose Bouquets</p>
+
+</div>
+
+<div>
+
+<h3>💝 Free Delivery</h3>
+
+<p>Orders Above ₹1500</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Contact -->
+
+<section
+class="contact"
+id="contact">
+
+<h2>Contact Us</h2>
+
+<form>
+
+<input
+type="text"
+placeholder="Your Name">
+
+<input
+type="email"
+placeholder="Email">
+
+<textarea
+placeholder="Message"></textarea>
+
+<button>
+Send Message
+</button>
+
+</form>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 BlossomGifts
+
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

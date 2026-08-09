@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VetCare | Animal Health Consultation</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+        🐄 VetCare
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#doctors">Doctors</a></li>
+            <li><a href="#diseases">Diseases</a></li>
+            <li><a href="#consultation">Consultation</a></li>
+            <li><a href="#history">History</a></li>
+        </ul>
+    </nav>
+
+    <button class="login-btn" onclick="openLogin()">
+        Farmer Login
+    </button>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <span class="badge">
+            🩺 Digital Veterinary Healthcare
+        </span>
+
+        <h1>
+            Better Healthcare<br>
+            For Your Animals
+        </h1>
+
+        <p>
+            Send your animal's signs and symptoms to
+            veterinary doctors through text, images,
+            audio or video and receive professional guidance.
+        </p>
+
+        <a href="#consultation" class="btn">
+            Start Consultation
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services">
+
+    <h2>How VetCare Works</h2>
+
+    <p class="section-text">
+        Get veterinary assistance without travelling long distances.
+    </p>
+
+    <div class="service-container">
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                📝
+            </div>
+
+            <h3>Describe Symptoms</h3>
+
+            <p>
+                Send animal signs and symptoms
+                using text, images, audio or video.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🩺
+            </div>
+
+            <h3>Doctor Reviews</h3>
+
+            <p>
+                A veterinary doctor receives
+                and reviews your consultation request.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                💬
+            </div>
+
+            <h3>Get Response</h3>
+
+            <p>
+                Receive medical guidance,
+                recommendations and prescriptions.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                📋
+            </div>
+
+            <h3>Save Records</h3>
+
+            <p>
+                Consultation information is
+                maintained for future reference.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DOCTORS ================= -->
+
+<section class="doctors" id="doctors">
+
+    <h2>Choose Your Veterinary Doctor</h2>
+
+    <p class="section-text">
+        Select a government or private veterinary service.
+    </p>
+
+    <div class="doctor-container">
+
+
+        <div class="doctor-card">
+
+            <div class="doctor-image">
+                👨‍⚕️
+            </div>
+
+            <span class="government">
+                GOVERNMENT CVH
+            </span>
+
+            <h3>Dr. Raj Kumar</h3>
+
+            <p>
+                Veterinary Specialist
+            </p>
+
+            <div class="doctor-info">
+                ⭐ 4.8 Rating<br>
+                🏛️ Government Veterinary Hospital
+            </div>
+
+            <div class="price free">
+                FREE
+            </div>
+
+            <button onclick="subscribeDoctor(
+                'Dr. Raj Kumar',
+                'Government',
+                0
+            )">
+                Subscribe Free
+            </button>
+
+        </div>
+
+
+        <div class="doctor-card">
+
+            <div class="doctor-image">
+                👩‍⚕️
+            </div>
+
+            <span class="private">
+                PRIVATE CLINIC
+            </span>
+
+            <h3>Dr. Sarah Khan</h3>
+
+            <p>
+                Animal Health Specialist
+            </p>
+
+            <div class="doctor-info">
+                ⭐ 4.9 Rating<br>
+                🏥 Private Veterinary Clinic
+            </div>
+
+            <div class="price">
+                ₹500 / Consultation
+            </div>
+
+            <button onclick="subscribeDoctor(
+                'Dr. Sarah Khan',
+                'Private',
+                500
+            )">
+                Subscribe
+
+            </button>
+
+        </div>
+
+
+        <div class="doctor-card">
+
+            <div class="doctor-image">
+                👨‍⚕️
+            </div>
+
+            <span class="private">
+                PRIVATE CLINIC
+            </span>
+
+            <h3>Dr. Ahmed Ali</h3>
+
+            <p>
+                Large Animal Specialist
+            </p>
+
+            <div class="doctor-info">
+                ⭐ 4.7 Rating<br>
+                🏥 Private Veterinary Clinic
+            </div>
+
+            <div class="price">
+                ₹400 / Consultation
+            </div>
+
+            <button onclick="subscribeDoctor(
+                'Dr. Ahmed Ali',
+                'Private',
+                400
+            )">
+                Subscribe
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONSULTATION ================= -->
+
+<section class="consultation" id="consultation">
+
+    <h2>Send Animal Consultation Request</h2>
+
+    <p class="section-text">
+        Upload the animal's signs and symptoms in any supported format.
+    </p>
+
+
+    <form id="consultationForm">
+
+
+        <div class="form-group">
+
+            <label>
+                Farmer Name
+            </label>
+
+            <input
+                type="text"
+                id="farmerName"
+                placeholder="Enter farmer name"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Animal Type
+            </label>
+
+            <select id="animalType" required>
+
+                <option value="">
+                    Select Animal
+                </option>
+
+                <option>Cow</option>
+                <option>Buffalo</option>
+                <option>Goat</option>
+                <option>Sheep</option>
+                <option>Horse</option>
+                <option>Chicken</option>
+                <option>Other</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Describe Signs & Symptoms
+            </label>
+
+            <textarea
+                id="symptoms"
+                placeholder="Describe the animal's condition..."
+                required
+            ></textarea>
+
+        </div>
+
+
+        <div class="upload-section">
+
+            <h3>
+                Attach Medical Evidence
+            </h3>
+
+            <p>
+                You can provide images, audio or video.
+            </p>
+
+
+            <div class="upload-grid">
+
+
+                <label class="upload-box">
+
+                    📷
+
+                    <span>
+                        Animal Images
+                    </span>
+
+                    <input
+                        type="file"
+                        id="imageFile"
+                        accept="image/*"
+                    >
+
+                </label>
+
+
+                <label class="upload-box">
+
+                    🎙️
+
+                    <span>
+                        Audio Recording
+                    </span>
+
+                    <input
+                        type="file"
+                        id="audioFile"
+                        accept="audio/*"
+                    >
+
+                </label>
+
+
+                <label class="upload-box">
+
+                    🎥
+
+                    <span>
+                        Animal Video
+                    </span>
+
+                    <input
+                        type="file"
+                        id="videoFile"
+                        accept="video/*"
+                    >
+
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <button type="submit">
+            📤 Send To Doctor
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- ================= PAYMENT ================= -->
+
+<section class="payment">
+
+    <h2>Payment Options</h2>
+
+    <p class="section-text">
+        Private veterinary consultations require payment.
+    </p>
+
+
+    <div class="payment-container">
+
+
+        <div class="payment-card">
+
+            <div class="payment-icon">
+                🏦
+            </div>
+
+            <h3>Bank Transfer</h3>
+
+            <p>
+                Transfer the consultation fee
+                directly to the doctor's bank account.
+            </p>
+
+            <button onclick="showBankDetails()">
+                View Bank Details
+            </button>
+
+        </div>
+
+
+        <div class="payment-card">
+
+            <div class="payment-icon">
+                💸
+            </div>
+
+            <h3>EasyPaisa</h3>
+
+            <p>
+                Pay the consultation fee using
+                the doctor's EasyPaisa account.
+            </p>
+
+            <button onclick="showEasyPaisa()">
+                View EasyPaisa
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DISEASES ================= -->
+
+<section class="diseases" id="diseases">
+
+    <h2>Common Animal Diseases</h2>
+
+    <p class="section-text">
+        Learn about common diseases and basic care information.
+    </p>
+
+
+    <div class="disease-container">
+
+
+        <div class="disease-card">
+
+            <div class="disease-image">
+                🐄
+            </div>
+
+            <h3>Foot and Mouth Disease</h3>
+
+            <p>
+                Common signs include fever,
+                mouth lesions and difficulty walking.
+            </p>
+
+            <button onclick="showDisease('Foot and Mouth Disease')">
+                View Details
+            </button>
+
+        </div>
+
+
+        <div class="disease-card">
+
+            <div class="disease-image">
+                🐄
+            </div>
+
+            <h3>Mastitis</h3>
+
+            <p>
+                Inflammation of the udder that
+                may affect milk production.
+            </p>
+
+            <button onclick="showDisease('Mastitis')">
+                View Details
+            </button>
+
+        </div>
+
+
+        <div class="disease-card">
+
+            <div class="disease-image">
+                🐐
+            </div>
+
+            <h3>Parasitic Infection</h3>
+
+            <p>
+                May cause weakness, weight loss
+                and reduced animal health.
+            </p>
+
+            <button onclick="showDisease('Parasitic Infection')">
+                View Details
+            </button>
+
+        </div>
+
+
+        <div class="disease-card">
+
+            <div class="disease-image">
+                🐑
+            </div>
+
+            <h3>Respiratory Infection</h3>
+
+            <p>
+                Possible signs include coughing,
+                nasal discharge and breathing problems.
+            </p>
+
+            <button onclick="showDisease('Respiratory Infection')">
+                View Details
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= HISTORY ================= -->
+
+<section class="history" id="history">
+
+    <h2>Consultation History</h2>
+
+    <div class="history-table">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Date</th>
+                    <th>Animal</th>
+                    <th>Doctor</th>
+                    <th>Status</th>
+                    <th>Response</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="historyBody">
+
+                <tr>
+
+                    <td>08 Aug 2026</td>
+
+                    <td>Cow</td>
+
+                    <td>Dr. Raj Kumar</td>
+
+                    <td class="completed">
+                        Completed
+                    </td>
+
+                    <td>
+                        View Response
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>05 Aug 2026</td>
+
+                    <td>Goat</td>
+
+                    <td>Dr. Sarah Khan</td>
+
+                    <td class="pending">
+                        Pending
+                    </td>
+
+                    <td>
+                        Awaiting Doctor
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ANALYTICS ================= -->
+
+<section class="analytics">
+
+    <h2>Animal Health Records</h2>
+
+    <p class="section-text">
+        Recorded consultation data can help identify health trends.
+    </p>
+
+
+    <div class="analytics-container">
+
+
+        <div class="analytics-card">
+
+            <span>
+                📋
+            </span>
+
+            <strong id="consultationCount">
+                24
+            </strong>
+
+            <p>
+                Consultations
+            </p>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <span>
+                🐄
+            </span>
+
+            <strong>
+                18
+            </strong>
+
+            <p>
+                Healthy Animals
+            </p>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <span>
+                🩺
+            </span>
+
+            <strong>
+                6
+            </strong>
+
+            <p>
+                Active Cases
+            </p>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <span>
+                💊
+            </span>
+
+            <strong>
+                21
+            </strong>
+
+            <p>
+                Treated Cases
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LOGIN MODAL ================= -->
+
+<div class="modal" id="loginModal">
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            onclick="closeLogin()">
+            ×
+        </button>
+
+        <h2>Farmer Login</h2>
+
+        <input
+            type="text"
+            id="loginEmail"
+            placeholder="Email or Mobile Number"
+        >
+
+        <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password"
+        >
+
+        <button onclick="farmerLogin()">
+            Login
+        </button>
+
+        <p>
+            New farmer?
+            <a href="#">
+                Register here
+            </a>
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        🐄 VetCare
+    </div>
+
+    <p>
+        Connecting farmers with veterinary healthcare.
+    </p>
+
+    <p class="copyright">
+        © 2026 VetCare | Animal Health Consultation Platform
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

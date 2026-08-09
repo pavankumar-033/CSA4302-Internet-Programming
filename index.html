@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VoteOnline | Secure E-Voting</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+        🗳️ VoteOnline
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#candidates">Candidates</a></li>
+            <li><a href="#vote">Vote</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="#history">History</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <span class="badge">🔒 Secure • Transparent • Accessible</span>
+
+        <h1>Vote From Anywhere</h1>
+
+        <p>
+            A secure and convenient online voting platform
+            designed to make elections easier and more accessible.
+        </p>
+
+        <a href="#vote" class="btn">
+            Cast Your Vote
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LOGIN ================= -->
+
+<section class="login">
+
+    <h2>Voter Login</h2>
+
+    <p class="section-text">
+        Login securely to access your election ballot.
+    </p>
+
+    <form id="loginForm">
+
+        <input
+            type="text"
+            id="voterId"
+            placeholder="Enter Voter ID"
+            required
+        >
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter Password"
+            required
+        >
+
+        <button type="submit">
+            Login Securely
+        </button>
+
+        <p class="login-note">
+            🔐 Multi-factor authentication enabled
+        </p>
+
+    </form>
+
+</section>
+
+
+<!-- ================= MFA ================= -->
+
+<section class="verification">
+
+    <h2>Multi-Factor Verification</h2>
+
+    <div class="verification-box">
+
+        <div class="security-icon">
+            🔐
+        </div>
+
+        <h3>Verify Your Identity</h3>
+
+        <p>
+            A verification code will be sent to your
+            registered mobile number.
+        </p>
+
+        <input
+            type="text"
+            id="otp"
+            placeholder="Enter 6-digit OTP"
+            maxlength="6"
+        >
+
+        <button onclick="verifyOTP()">
+            Verify OTP
+        </button>
+
+        <p id="otpResult"></p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CANDIDATES ================= -->
+
+<section class="candidates" id="candidates">
+
+    <h2>Election Candidates</h2>
+
+    <p class="section-text">
+        Review candidate information before casting your vote.
+    </p>
+
+    <div class="candidate-container">
+
+
+        <div class="candidate-card">
+
+            <div class="candidate-image">
+                👤
+            </div>
+
+            <h3>Candidate A</h3>
+
+            <span class="party">
+                Progressive Alliance
+            </span>
+
+            <p>
+                Focused on education, employment
+                and digital development.
+            </p>
+
+            <button onclick="showCandidate('Candidate A')">
+                View Profile
+            </button>
+
+        </div>
+
+
+        <div class="candidate-card">
+
+            <div class="candidate-image">
+                👤
+            </div>
+
+            <h3>Candidate B</h3>
+
+            <span class="party">
+                People First Party
+            </span>
+
+            <p>
+                Focused on infrastructure,
+                public services and development.
+            </p>
+
+            <button onclick="showCandidate('Candidate B')">
+                View Profile
+            </button>
+
+        </div>
+
+
+        <div class="candidate-card">
+
+            <div class="candidate-image">
+                👤
+            </div>
+
+            <h3>Candidate C</h3>
+
+            <span class="party">
+                National Development Party
+            </span>
+
+            <p>
+                Focused on technology,
+                innovation and economic growth.
+            </p>
+
+            <button onclick="showCandidate('Candidate C')">
+                View Profile
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= VOTING ================= -->
+
+<section class="vote" id="vote">
+
+    <h2>Cast Your Vote</h2>
+
+    <p class="section-text">
+        Select one candidate and submit your vote.
+    </p>
+
+    <form id="voteForm">
+
+        <div class="vote-option">
+
+            <input
+                type="radio"
+                name="candidate"
+                value="Candidate A"
+                id="candidateA"
+            >
+
+            <label for="candidateA">
+
+                <strong>Candidate A</strong>
+
+                <span>
+                    Progressive Alliance
+                </span>
+
+            </label>
+
+        </div>
+
+
+        <div class="vote-option">
+
+            <input
+                type="radio"
+                name="candidate"
+                value="Candidate B"
+                id="candidateB"
+            >
+
+            <label for="candidateB">
+
+                <strong>Candidate B</strong>
+
+                <span>
+                    People First Party
+                </span>
+
+            </label>
+
+        </div>
+
+
+        <div class="vote-option">
+
+            <input
+                type="radio"
+                name="candidate"
+                value="Candidate C"
+                id="candidateC"
+            >
+
+            <label for="candidateC">
+
+                <strong>Candidate C</strong>
+
+                <span>
+                    National Development Party
+                </span>
+
+            </label>
+
+        </div>
+
+
+        <button type="submit">
+            🗳️ Submit Vote
+        </button>
+
+    </form>
+
+    <p class="vote-warning">
+        ⚠️ Please review your selection before submitting.
+    </p>
+
+</section>
+
+
+<!-- ================= CONFIRMATION ================= -->
+
+<section class="confirmation">
+
+    <h2>Vote Confirmation</h2>
+
+    <div class="confirmation-box">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <h3 id="confirmationTitle">
+            Your Vote Is Secure
+        </h3>
+
+        <p id="confirmationText">
+            After submitting your vote, you will receive
+            a unique confirmation reference.
+        </p>
+
+        <div class="reference">
+            Reference: <strong id="referenceNumber">
+                --
+            </strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= RESULTS ================= -->
+
+<section class="results" id="results">
+
+    <h2>Election Progress</h2>
+
+    <p class="section-text">
+        Current participation and election progress.
+    </p>
+
+    <div class="result-container">
+
+
+        <div class="result-card">
+
+            <h3>Registered Voters</h3>
+
+            <strong>25,000</strong>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <h3>Votes Submitted</h3>
+
+            <strong id="votesCount">
+                18,750
+            </strong>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <h3>Participation</h3>
+
+            <strong>
+                75%
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="progress-section">
+
+        <div class="progress-label">
+
+            <span>Election Participation</span>
+
+            <span>75%</span>
+
+        </div>
+
+        <div class="progress-bar">
+
+            <div class="progress-fill"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= HISTORY ================= -->
+
+<section class="history" id="history">
+
+    <h2>Voting History</h2>
+
+    <div class="history-card">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Election</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Reference</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>General Election</td>
+                    <td>09 Aug 2026</td>
+                    <td class="success">Submitted</td>
+                    <td>VO-2026-00125</td>
+                </tr>
+
+                <tr>
+                    <td>Local Election</td>
+                    <td>15 Jun 2026</td>
+                    <td class="success">Submitted</td>
+                    <td>VO-2026-00087</td>
+                </tr>
+
+                <tr>
+                    <td>Student Election</td>
+                    <td>20 Mar 2026</td>
+                    <td class="success">Submitted</td>
+                    <td>VO-2026-00042</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SECURITY ================= -->
+
+<section class="security">
+
+    <h2>Security & Privacy</h2>
+
+    <div class="security-container">
+
+        <div class="security-card">
+
+            <div>🔐</div>
+
+            <h3>Secure Authentication</h3>
+
+            <p>
+                Multi-factor verification helps
+                protect voter accounts.
+            </p>
+
+        </div>
+
+
+        <div class="security-card">
+
+            <div>🛡️</div>
+
+            <h3>Data Protection</h3>
+
+            <p>
+                Voter information is protected
+                using secure data handling.
+            </p>
+
+        </div>
+
+
+        <div class="security-card">
+
+            <div>📋</div>
+
+            <h3>Transparent Process</h3>
+
+            <p>
+                Voters receive confirmation
+                after submitting their ballot.
+            </p>
+
+        </div>
+
+
+        <div class="security-card">
+
+            <div>🌐</div>
+
+            <h3>Accessible Voting</h3>
+
+            <p>
+                Vote remotely using a computer,
+                tablet or mobile device.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+    <h2>Contact Support</h2>
+
+    <form id="contactForm">
+
+        <input
+            type="text"
+            placeholder="Your Name"
+            required
+        >
+
+        <input
+            type="email"
+            placeholder="Email Address"
+            required
+        >
+
+        <textarea
+            placeholder="How can we help you?"
+            required
+        ></textarea>
+
+        <button type="submit">
+            Send Message
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        🗳️ VoteOnline
+    </div>
+
+    <p>
+        Secure • Transparent • Accessible E-Voting
+    </p>
+
+    <p class="copyright">
+        © 2026 VoteOnline | E-Voting Platform
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

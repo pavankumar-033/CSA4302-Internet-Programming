@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentRide - Vehicle Rental</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🚘 RentRide</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#vehicles">Vehicles</a>
+        <a href="#booking">Booking</a>
+        <a href="#history">History</a>
+        <a href="#support">Support</a>
+    </nav>
+
+    <button onclick="openLogin()">Login</button>
+</header>
+
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <span>🚗 Easy • Fast • Reliable</span>
+        <h1>Rent Your Perfect Ride</h1>
+        <p>
+            Find cars, SUVs and trucks at affordable prices.
+            Book your vehicle quickly and travel with confidence.
+        </p>
+        <a href="#vehicles" class="btn">Explore Vehicles</a>
+    </div>
+</section>
+
+
+<section class="search">
+    <h2>Find Your Vehicle</h2>
+
+    <div class="search-box">
+        <input type="text" id="searchInput"
+               placeholder="Search vehicle...">
+
+        <select id="typeFilter">
+            <option value="all">All Types</option>
+            <option value="Car">Cars</option>
+            <option value="SUV">SUVs</option>
+            <option value="Truck">Trucks</option>
+        </select>
+
+        <select id="locationFilter">
+            <option value="all">All Locations</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Hyderabad">Hyderabad</option>
+        </select>
+
+        <button onclick="filterVehicles()">Search</button>
+    </div>
+</section>
+
+
+<section id="vehicles">
+    <h2>Available Vehicles</h2>
+    <p class="subtitle">Choose the vehicle that matches your needs.</p>
+
+    <div class="vehicle-grid" id="vehicleGrid">
+
+        <div class="vehicle-card"
+             data-name="Toyota Camry"
+             data-type="Car"
+             data-location="Chennai">
+
+            <div class="vehicle-image">🚗</div>
+
+            <span class="tag">CAR</span>
+
+            <h3>Toyota Camry</h3>
+
+            <p>Automatic • 5 Seats • Petrol</p>
+
+            <h4>₹2,500 <small>/ day</small></h4>
+
+            <p>📍 Chennai</p>
+
+            <button onclick="bookVehicle('Toyota Camry',2500)">
+                Book Now
+            </button>
+        </div>
+
+
+        <div class="vehicle-card"
+             data-name="Hyundai Creta"
+             data-type="SUV"
+             data-location="Bangalore">
+
+            <div class="vehicle-image">🚙</div>
+
+            <span class="tag">SUV</span>
+
+            <h3>Hyundai Creta</h3>
+
+            <p>Automatic • 5 Seats • Diesel</p>
+
+            <h4>₹3,000 <small>/ day</small></h4>
+
+            <p>📍 Bangalore</p>
+
+            <button onclick="bookVehicle('Hyundai Creta',3000)">
+                Book Now
+            </button>
+        </div>
+
+
+        <div class="vehicle-card"
+             data-name="Tata Harrier"
+             data-type="SUV"
+             data-location="Hyderabad">
+
+            <div class="vehicle-image">🚙</div>
+
+            <span class="tag">SUV</span>
+
+            <h3>Tata Harrier</h3>
+
+            <p>Manual • 5 Seats • Diesel</p>
+
+            <h4>₹2,800 <small>/ day</small></h4>
+
+            <p>📍 Hyderabad</p>
+
+            <button onclick="bookVehicle('Tata Harrier',2800)">
+                Book Now
+            </button>
+        </div>
+
+
+        <div class="vehicle-card"
+             data-name="Mahindra Bolero"
+             data-type="Truck"
+             data-location="Chennai">
+
+            <div class="vehicle-image">🚚</div>
+
+            <span class="tag">TRUCK</span>
+
+            <h3>Mahindra Bolero</h3>
+
+            <p>Manual • 2 Seats • Diesel</p>
+
+            <h4>₹2,200 <small>/ day</small></h4>
+
+            <p>📍 Chennai</p>
+
+            <button onclick="bookVehicle('Mahindra Bolero',2200)">
+                Book Now
+            </button>
+        </div>
+
+
+        <div class="vehicle-card"
+             data-name="Honda City"
+             data-type="Car"
+             data-location="Hyderabad">
+
+            <div class="vehicle-image">🚘</div>
+
+            <span class="tag">CAR</span>
+
+            <h3>Honda City</h3>
+
+            <p>Automatic • 5 Seats • Petrol</p>
+
+            <h4>₹2,000 <small>/ day</small></h4>
+
+            <p>📍 Hyderabad</p>
+
+            <button onclick="bookVehicle('Honda City',2000)">
+                Book Now
+            </button>
+        </div>
+
+
+        <div class="vehicle-card"
+             data-name="Toyota Fortuner"
+             data-type="SUV"
+             data-location="Chennai">
+
+            <div class="vehicle-image">🚙</div>
+
+            <span class="tag">SUV</span>
+
+            <h3>Toyota Fortuner</h3>
+
+            <p>Automatic • 7 Seats • Diesel</p>
+
+            <h4>₹4,500 <small>/ day</small></h4>
+
+            <p>📍 Chennai</p>
+
+            <button onclick="bookVehicle('Toyota Fortuner',4500)">
+                Book Now
+            </button>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="booking-section" id="booking">
+
+    <h2>Book Your Vehicle</h2>
+
+    <form id="bookingForm">
+
+        <input type="text" id="customerName"
+               placeholder="Full Name" required>
+
+        <input type="email" id="email"
+               placeholder="Email Address" required>
+
+        <select id="selectedVehicle" required>
+            <option value="">Select Vehicle</option>
+            <option>Toyota Camry</option>
+            <option>Hyundai Creta</option>
+            <option>Tata Harrier</option>
+            <option>Mahindra Bolero</option>
+            <option>Honda City</option>
+            <option>Toyota Fortuner</option>
+        </select>
+
+        <label>Pickup Date</label>
+        <input type="date" id="pickupDate" required>
+
+        <label>Return Date</label>
+        <input type="date" id="returnDate" required>
+
+        <select id="paymentMethod" required>
+            <option value="">Payment Method</option>
+            <option>UPI</option>
+            <option>Credit Card</option>
+            <option>Debit Card</option>
+            <option>Net Banking</option>
+        </select>
+
+        <button type="submit">Confirm Booking</button>
+
+    </form>
+
+    <div id="bookingResult"></div>
+
+</section>
+
+
+<section id="history">
+
+    <h2>Rental History</h2>
+
+    <div class="history-box">
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Booking ID</th>
+                    <th>Vehicle</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody id="historyBody">
+                <tr>
+                    <td>RR1024</td>
+                    <td>Honda City</td>
+                    <td>05 Aug 2026</td>
+                    <td class="completed">Completed</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+</section>
+
+
+<section class="support" id="support">
+
+    <h2>24/7 Customer Support</h2>
+
+    <p class="subtitle">
+        Have a problem with your rental? Contact us.
+    </p>
+
+    <form id="supportForm">
+
+        <input type="text" placeholder="Your Name" required>
+
+        <input type="email" placeholder="Your Email" required>
+
+        <textarea placeholder="Describe your issue..."
+                  required></textarea>
+
+        <button type="submit">Send Request</button>
+
+    </form>
+
+</section>
+
+
+<div class="modal" id="loginModal">
+
+    <div class="modal-content">
+
+        <button class="close" onclick="closeLogin()">×</button>
+
+        <h2>RentRide Login</h2>
+
+        <input type="email" id="loginEmail"
+               placeholder="Email">
+
+        <input type="password" id="loginPassword"
+               placeholder="Password">
+
+        <button onclick="login()">Login</button>
+
+        <p>New user? Create an account after login.</p>
+
+    </div>
+
+</div>
+
+
+<footer>
+    <h3>🚘 RentRide</h3>
+    <p>Simple. Fast. Reliable Vehicle Rentals.</p>
+    <p>© 2026 RentRide. All Rights Reserved.</p>
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
